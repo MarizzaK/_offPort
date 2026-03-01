@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ditt Namn | Webbutvecklare</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes glow {
+        0%,
+        100% {
+          box-shadow: 0 0 10px rgba(255, 105, 180, 0.6),
+            0 0 20px rgba(255, 105, 180, 0.4);
+        }
+        50% {
+          box-shadow: 0 0 20px rgba(255, 105, 180, 0.8),
+            0 0 30px rgba(255, 105, 180, 0.6);
+        }
+      }
+      .hover\:animate-glow:hover {
+        animation: glow 1s infinite alternate;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white font-[Poppins] scroll-smooth">
+    <!-- HERO -->
+    <header
+      class="min-h-screen flex items-center justify-center px-6 relative overflow-hidden bg-gradient-to-br from-pink-500 via-rose-500 to-purple-600"
+    >
+      <div
+        class="absolute w-96 h-96 bg-pink-300 rounded-full blur-3xl opacity-30 -top-20 -left-20"
+      ></div>
+      <div
+        class="absolute w-96 h-96 bg-purple-300 rounded-full blur-3xl opacity-30 bottom-0 right-0"
+      ></div>
+
+      <div
+        class="relative z-10 flex flex-col lg:flex-row items-center gap-12 text-center lg:text-left"
+      >
+        <!-- PROFILE IMAGE -->
+        <div class="relative">
+          <img
+            src="./images/header-img.jpeg"
+            alt="Profilbild"
+            class="w-60 h-60 object-cover rounded-full border-4 border-white shadow-2xl hover:scale-105 transition duration-500"
+          />
+        </div>
+
+        <div>
+          <h1
+            class="text-5xl lg:text-6xl font-extrabold text-white drop-shadow-lg"
+          >
+            Hi, I'm Marizza Karlin
+          </h1>
+          <p class="text-pink-100 text-xl mt-4">Web Developer</p>
+
+          <div class="mt-8 flex gap-4 justify-center lg:justify-start">
+            <a
+              href="mailto:marizza.karlin@icloud.com"
+              class="px-8 py-3 border border-white text-white rounded-full hover:bg-white hover:text-pink-600 transition duration-300"
+            >
+              Let's get in touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- PROJECTS -->
+    <section
+      id="projects"
+      class="projects-section py-24 px-6 bg-gradient-to-b from-gray-900 to-gray-800"
+    >
+      <h2 class="text-4xl text-center font-bold mb-16 text-pink-400">
+        My Projects
+      </h2>
+
+      <div class="max-w-6xl mx-auto relative">
+        <div class="carousel-wrapper">
+          <div id="carousel" class="carousel">
+            <div class="carousel-card">
+              <img src="https://picsum.photos/300/220?1" />
+              <h3>Project One</h3>
+              <a
+                href="https://portfolio-three-ecru-46.vercel.app/"
+                target="_blank"
+              >
+                View Demo
+              </a>
+            </div>
+
+            <div class="carousel-card">
+              <img src="https://picsum.photos/300/220?2" />
+              <h3>Project Two</h3>
+              <a
+                href="https://portfolio-three-ecru-46.vercel.app/"
+                target="_blank"
+              >
+                View Demo
+              </a>
+            </div>
+
+            <div class="carousel-card">
+              <img src="https://picsum.photos/300/220?3" />
+              <h3>Project Three</h3>
+              <a
+                href="https://portfolio-three-ecru-46.vercel.app/"
+                target="_blank"
+              >
+                View Demo
+              </a>
+            </div>
+
+            <div class="carousel-card">
+              <img src="https://picsum.photos/300/220?4" />
+              <h3>Project Four</h3>
+              <a
+                href="https://portfolio-three-ecru-46.vercel.app/"
+                target="_blank"
+              >
+                View Demo
+              </a>
+            </div>
+
+            <div class="carousel-card">
+              <img src="https://picsum.photos/300/220?5" />
+              <h3>Project Five</h3>
+              <a
+                href="https://portfolio-three-ecru-46.vercel.app/"
+                target="_blank"
+              >
+                View Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SKILLS -->
+    <section id="skills" class="py-24 px-6 bg-gray-800 text-white">
+      <h2 class="text-4xl text-center font-bold mb-6 text-pink-400">
+        Skills & Technologies
+      </h2>
+
+      <div class="max-w-5xl mx-auto space-y-12">
+        <!-- CORE -->
+        <div>
+          <h3 class="section-title">Core Technologies</h3>
+
+          <div class="skills-grid">
+            <span class="skill">HTML5</span>
+            <span class="skill">CSS3</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">TypeScript</span>
+            <span class="skill">React</span>
+            <span class="skill">Next.js</span>
+            <span class="skill">Tailwind CSS</span>
+            <span class="skill">Responsive Design</span>
+          </div>
+        </div>
+
+        <!-- BACKEND -->
+        <div>
+          <h3 class="section-title">Backend & Databases</h3>
+
+          <div class="skills-grid">
+            <span class="skill">Node.js</span>
+            <span class="skill">Express.js</span>
+            <span class="skill">REST API</span>
+            <span class="skill">Authentication / JWT</span>
+            <span class="skill">MongoDB</span>
+            <span class="skill">SQL</span>
+          </div>
+        </div>
+
+        <!-- ECOMMERCE -->
+        <div>
+          <h3 class="section-title">E-commerce & Tools</h3>
+
+          <div class="skills-grid">
+            <span class="skill">Shopify</span>
+
+            <span class="skill">WordPress</span>
+            <span class="skill">WooCommerce</span>
+            <span class="skill">SEO</span>
+            <span class="skill">Performance Optimization</span>
+            <span class="skill">Git</span>
+            <span class="skill">GitHub</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- EDUCATION -->
+    <section class="py-24 px-10 bg-gradient-to-b from-gray-900 to-gray-800">
+      <h2 class="text-4xl text-center font-bold mb-16 text-pink-400">
+        Education
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- CARD 1 -->
+        <div
+          class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:scale-105 transition duration-300"
+        >
+          <h3 class="text-xl font-semibold text-white mb-2">Medieinstitutet</h3>
+          <p class="text-gray-300">E-commerce Web Development | 2023–2025</p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div
+          class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:scale-105 transition duration-300"
+        >
+          <h3 class="text-xl font-semibold text-white mb-2">NTI-skolan</h3>
+          <p class="text-gray-300">Web Development 1 | 2023</p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div
+          class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:scale-105 transition duration-300"
+        >
+          <h3 class="text-xl font-semibold text-white mb-2">Jensen Komvux</h3>
+          <p class="text-gray-300">Programming 1, Python | 2023</p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div
+          class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:scale-105 transition duration-300"
+        >
+          <h3 class="text-xl font-semibold text-white mb-2">
+            Thorén Business School
+          </h3>
+          <p class="text-gray-300">High School: Economics & Law | 2019-2022</p>
+        </div>
+      </div>
+    </section>
+    <!-- WORK EXPERIENCE -->
+    <section class="py-24 px-10 bg-gray-900">
+      <h2 class="text-4xl text-center font-bold mb-16 text-rose-400">
+        Work Experience
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 1 -->
+        <div
+          class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300"
+        >
+          <h3 class="text-xl font-semibold text-white">Tutoring</h3>
+          <p class="text-gray-300">Yepstr</p>
+        </div>
+
+        <!-- 3 -->
+        <div
+          class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300"
+        >
+          <h3 class="text-xl font-semibold text-white">Croupier</h3>
+          <p class="text-gray-300">Cherry Casino</p>
+        </div>
+
+        <!-- 3 -->
+        <div
+          class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300"
+        >
+          <h3 class="text-xl font-semibold text-white">Youth Football Coach</h3>
+          <p class="text-gray-300">Samba Football Academy</p>
+        </div>
+
+        <!-- 4 -->
+        <div
+          class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300"
+        >
+          <h3 class="text-xl font-semibold text-white">
+            Head Waitress, Bartender, Waitress
+          </h3>
+          <p class="text-gray-300">Gröna Lund Tivoli</p>
+        </div>
+
+        <!-- 5 -->
+        <div
+          class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300"
+        >
+          <h3 class="text-xl font-semibold text-white">Sommelier</h3>
+          <p class="text-gray-300">Vinfolket</p>
+        </div>
+
+        <!-- 6 -->
+        <div
+          class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300"
+        >
+          <h3 class="text-xl font-semibold text-white">Retail Assistant</h3>
+          <p class="text-gray-300">ICA KVANTUM</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section class="py-20 px-10 bg-gray-900 text-white">
+      <div
+        class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12"
+      >
+        <div class="lg:w-1/2 text-left">
+          <h2 class="text-4xl font-bold mb-6 text-pink-400">About Me</h2>
+          <p class="text-gray-300 mb-4">
+            Hi! I'm Marizza, a passionate web developer specializing in
+            e-commerce solutions. I enjoy creating sleek, user-friendly websites
+            and learning new technologies. My goal is to continue developing as
+            a fullstack developer, expanding my knowledge and gaining experience
+            through real-world projects.
+          </p>
+          <p class="text-gray-300">
+            Outside of coding, I enjoy working out, exploring creative hobbies
+            such as crafting and drawing, and spending quality time with family
+            and friends. Staying active and creative helps me maintain curiosity
+            and a positive mindset in both life and development.
+          </p>
+        </div>
+        <div class="lg:w-1/2 flex justify-center lg:justify-end">
+          <img
+            src="./images/aboutme.jpeg"
+            alt="Marizza Karlin"
+            class="w-80 h-80 object-cover rounded-3xl border-4 border-pink-400 shadow-2xl transition duration-500"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <footer class="bg-gray-900 py-16 text-center">
+      <h2 class="text-3xl mb-8 text-pink-400 font-bold">Contact Me</h2>
+
+      <div class="flex justify-center gap-8">
+        <a
+          href="mailto:marizza.karlin@icloud.com"
+          class="relative w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center overflow-hidden group shadow-lg transform transition duration-300 hover:scale-110 hover:rotate-3 hover:animate-glow"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 12H8m0 0l4-4m0 8l-4-4"
+            />
+          </svg>
+        </a>
+
+        <a
+          href="https://github.com/MarizzaK"
+          target="_blank"
+          class="relative w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center overflow-hidden group shadow-lg transform transition duration-300 hover:scale-110 hover:rotate-3 hover:animate-glow"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 text-white"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.754-1.335-1.754-1.09-.745.082-.73.082-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.835 2.805 1.305 3.49.997.108-.775.42-1.305.763-1.605-2.665-.3-5.467-1.335-5.467-5.93 0-1.31.465-2.38 1.235-3.22-.125-.303-.535-1.523.115-3.176 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 013-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.655 1.653.245 2.873.12 3.176.77.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.435.375.825 1.11.825 2.24 0 1.615-.015 2.915-.015 3.31 0 .315.21.695.825.577C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"
+            />
+          </svg>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/marizza-karlin-8b34a734a/"
+          target="_blank"
+          class="relative w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center overflow-hidden group shadow-lg transform transition duration-300 hover:scale-110 hover:rotate-3 hover:animate-glow"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 text-white"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.27 2.3-2.6 4.73-2.6 5.06 0 6 3.33 6 7.66V24h-5v-7.66c0-1.83-.03-4.2-2.55-4.2-2.55 0-2.93 1.98-2.93 4.02V24h-5V8z"
+            />
+          </svg>
+        </a>
+      </div>
+    </footer>
+  </body>
+  <script>
+    const carousel = document.getElementById("carousel");
+    const cards = Array.from(carousel.children);
+
+    let currentIndex = 0;
+    const totalCards = cards.length;
+
+    function renderCarousel() {
+      const radius = 400;
+      const angleStep = 360 / totalCards;
+
+      cards.forEach((card, i) => {
+        const indexDiff = i - currentIndex;
+        const angle = indexDiff * angleStep;
+
+        const isActive = i === currentIndex;
+
+        const scale = isActive ? 1 : 0.75;
+        const opacity = isActive ? 1 : 0.4;
+        const tilt = isActive ? 0 : indexDiff * 4;
+
+        card.style.transform = `
+  translate(-50%, -50%)
+  rotateY(${angle}deg)
+  translateZ(${radius}px)
+  rotateZ(${tilt}deg)
+  scale(${scale})
+`;
+
+        card.style.opacity = opacity;
+        card.style.zIndex = isActive ? 10 : 1;
+      });
+    }
+
+    function nextCard() {
+      currentIndex = (currentIndex + 1) % totalCards;
+      renderCarousel();
+    }
+
+    setInterval(nextCard, 6000);
+
+    renderCarousel();
+  </script>
+</html>

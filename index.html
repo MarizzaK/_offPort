@@ -8,7 +8,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/style.css" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -25,6 +24,111 @@
       }
       .hover\:animate-glow:hover {
         animation: glow 1s infinite alternate;
+      }
+
+      /* ===== PROJECT SECTION ===== */
+      .projects-section {
+        position: relative;
+        overflow: hidden;
+        min-height: 650px;
+        z-index: 1;
+      }
+
+      /* ===== CAROUSEL WRAPPER ===== */
+      .carousel-wrapper {
+        perspective: 1200px;
+        position: relative;
+        height: 420px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      /* ===== CAROUSEL ===== */
+      .carousel {
+        position: relative;
+        width: 0;
+        height: 0;
+        transform-style: preserve-3d;
+      }
+      /* ===== POLAROID CARD ===== */
+      .carousel-card {
+        position: absolute;
+        width: 240px;
+        background: white;
+        border-radius: 6px;
+        padding: 12px 12px 50px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        cursor: pointer;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+
+        transition: transform 0.8s ease, opacity 0.8s ease;
+      }
+
+      /* image */
+      .carousel-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      /* title */
+      .carousel-card h3 {
+        margin-top: 10px;
+        font-weight: 600;
+        color: #222;
+      }
+
+      /* button */
+      .carousel-card a {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #ec4899;
+        color: white;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 14px;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .carousel-card a:hover {
+        background: #db2777;
+      }
+
+      /*----*/
+      .section-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 600;
+        color: #f9a8d4;
+      }
+
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .skill {
+        background: rgba(236, 72, 153, 0.15);
+        color: #f472b6;
+        padding: 8px 16px;
+        border-radius: 999px;
+        font-size: 14px;
+        transition: 0.3s;
+      }
+
+      .skill:hover {
+        transform: translateY(-3px);
+        background: rgba(236, 72, 153, 0.3);
       }
     </style>
   </head>
@@ -80,7 +184,6 @@
       <h2 class="text-4xl text-center font-bold mb-16 text-pink-400">
         My Projects
       </h2>
-
       <div class="max-w-6xl mx-auto relative">
         <div class="carousel-wrapper">
           <div id="carousel" class="carousel">

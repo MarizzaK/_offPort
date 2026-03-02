@@ -797,5 +797,202 @@
       </div>
     </footer>
   </body>
-  <script src="/main.js"></script>
+  <script>
+    const carousel = document.getElementById("carousel");
+    const cards = Array.from(carousel.children);
+    const range = document.getElementById("carouselRange");
+
+    let currentIndex = 0;
+    const totalCards = cards.length;
+
+    let autoRotate;
+    let interactionTimeout;
+
+    /* =========================
+   RENDER
+========================= */
+    function renderCarousel() {
+      const radius = window.innerWidth < 768 ? 260 : 400;
+      const angleStep = 360 / totalCards;
+
+      cards.forEach((card, i) => {
+        const indexDiff = i - currentIndex;
+        const angle = indexDiff * angleStep;
+
+        const isActive = i === currentIndex;
+
+        const scale = isActive ? 1 : 0.75;
+        const opacity = isActive ? 1 : 0.4;
+        const tilt = isActive ? 0 : indexDiff * 4;
+
+        card.style.transform = `
+      translate(-50%, -50%)
+      rotateY(${angle}deg)
+      translateZ(${radius}px)
+      rotateZ(${tilt}deg)
+      scale(${scale})
+    `;
+
+        card.style.opacity = opacity;
+        card.style.zIndex = isActive ? 10 : 1;
+      });
+
+      if (range) range.value = currentIndex;
+    }
+
+    /* =========================
+   AUTO ROTATION
+========================= */
+    function startAutoRotate() {
+      clearInterval(autoRotate);
+      autoRotate = setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalCards;
+        renderCarousel();
+      }, 4000);
+    }
+
+    function pauseAutoRotate() {
+      clearInterval(autoRotate);
+
+      clearTimeout(interactionTimeout);
+      interactionTimeout = setTimeout(() => {
+        startAutoRotate();
+      }, 4000);
+    }
+
+    /* =========================
+   DESKTOP RANGE SLIDER
+========================= */
+    if (range) {
+      range.max = totalCards - 1;
+
+      range.addEventListener("input", (e) => {
+        currentIndex = Number(e.target.value);
+        renderCarousel();
+        pauseAutoRotate();
+      });
+    }
+
+    /* =========================
+   MOBILE SWIPE
+========================= */
+    let startX = 0;
+    let isDragging = false;
+
+    carousel.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+      pauseAutoRotate();
+    });
+
+    carousel.addEventListener("touchmove", (e) => {
+      if (!isDragging) return;
+
+      const moveX = e.touches[0].clientX;
+      const diff = startX - moveX;
+
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) {
+          currentIndex = (currentIndex + 1) % totalCards;
+        } else {
+          currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+        }
+
+        renderCarousel();
+        startX = moveX;
+      }
+    });
+
+    carousel.addEventListener("touchend", () => {
+      isDragging = false;
+    });
+
+    /* =========================
+   MOUSE DRAG (DESKTOP)
+========================= */
+    let mouseStart = 0;
+    let mouseDown = false;
+
+    carousel.addEventListener("mousedown", (e) => {
+      mouseDown = true;
+      mouseStart = e.clientX;
+      pauseAutoRotate();
+    });
+
+    window.addEventListener("mouseup", () => {
+      mouseDown = false;
+    });
+
+    carousel.addEventListener("mousemove", (e) => {
+      if (!mouseDown) return;
+
+      const diff = mouseStart - e.clientX;
+
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          currentIndex = (currentIndex + 1) % totalCards;
+        } else {
+          currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+        }
+
+        renderCarousel();
+        mouseStart = e.clientX;
+      }
+    });
+
+    /* ========================= */
+    renderCarousel();
+    startAutoRotate();
+
+    const workCards = document.querySelectorAll(".work-card");
+
+    let autoCloseTimer = null;
+
+    workCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const isActive = card.classList.contains("active");
+
+        workCards.forEach((c) => c.classList.remove("active"));
+
+        clearTimeout(autoCloseTimer);
+
+        if (!isActive) {
+          card.classList.add("active");
+
+          autoCloseTimer = setTimeout(() => {
+            card.classList.remove("active");
+          }, 7000);
+        }
+      });
+    });
+
+    const eduToggles = document.querySelectorAll(".edu-toggle");
+
+    eduToggles.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const content = btn.nextElementSibling;
+        const expanded =
+          content.style.maxHeight && content.style.maxHeight !== "0px";
+
+        const isMobile = window.innerWidth <= 767;
+
+        if (!isMobile) {
+          document.querySelectorAll(".edu-content").forEach((c) => {
+            if (c !== content) {
+              c.style.maxHeight = null;
+              c.previousElementSibling.querySelector("span").textContent = "+";
+            }
+          });
+        }
+
+        if (!expanded) {
+          content.style.maxHeight = content.scrollHeight + "px";
+          btn.querySelector("span").textContent = "−";
+        } else {
+          content.style.maxHeight = null;
+          btn.querySelector("span").textContent = "+";
+        }
+      });
+    });
+  </script>
 </html>

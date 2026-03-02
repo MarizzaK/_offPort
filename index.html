@@ -147,24 +147,31 @@
         pointer-events: auto;
       }
 
-      /* ===== PROJECT SECTION ===== */
+      .work-card .expand-icon {
+        user-select: none;
+        transition: transform 0.3s ease;
+      }
+
       @media (max-width: 768px) {
         .work-card .long-desc {
           position: relative;
           inset: auto;
-          margin-top: 1rem;
+          margin-top: 0.5rem;
           border-radius: 1rem;
-          opacity: 1;
-          pointer-events: auto;
-          display: block;
+          opacity: 0;
+          max-height: 0;
+          overflow: hidden;
+          pointer-events: none;
+          transition: max-height 0.3s ease, opacity 0.3s ease;
           background: rgba(0, 0, 0, 0.7);
         }
 
         .work-card.active .long-desc {
           opacity: 1;
+          max-height: 500px;
+          pointer-events: auto;
         }
       }
-
       .edu-card {
         position: relative;
       }
@@ -566,13 +573,20 @@
       <h2 class="text-4xl text-center font-bold mb-16 text-rose-400">
         Work Experience
       </h2>
-      <!-- 1 -->
+
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 1 -->
         <div
           class="work-card bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg cursor-pointer relative hover:scale-105 transition-transform duration-300"
         >
           <h3 class="text-xl font-semibold text-white">Tutoring</h3>
           <p class="text-gray-300">Yepstr</p>
+
+          <span
+            class="expand-icon absolute top-4 right-4 text-2xl text-rose-400"
+            >+</span
+          >
+
           <div
             class="long-desc absolute inset-0 bg-black/80 backdrop-blur-md text-gray-100 p-6 rounded-2xl flex flex-col justify-center opacity-0 pointer-events-none transition-opacity duration-300"
           >
@@ -590,6 +604,11 @@
           <h3 class="text-xl font-semibold text-white">Croupier</h3>
           <p class="text-gray-300">Cherry Casino</p>
 
+          <span
+            class="expand-icon absolute top-4 right-4 text-2xl text-rose-400"
+            >+</span
+          >
+
           <div
             class="long-desc absolute inset-0 bg-black/80 backdrop-blur-md text-gray-100 p-6 rounded-2xl flex flex-col justify-center opacity-0 pointer-events-none transition-opacity duration-300"
           >
@@ -605,6 +624,11 @@
         >
           <h3 class="text-xl font-semibold text-white">Youth Football Coach</h3>
           <p class="text-gray-300">Samba Football Academy</p>
+
+          <span
+            class="expand-icon absolute top-4 right-4 text-2xl text-rose-400"
+            >+</span
+          >
 
           <div
             class="long-desc absolute inset-0 bg-black/80 backdrop-blur-md text-gray-100 p-6 rounded-2xl flex flex-col justify-center opacity-0 pointer-events-none transition-opacity duration-300"
@@ -624,6 +648,11 @@
           </h3>
           <p class="text-gray-300">Gröna Lund Tivoli</p>
 
+          <span
+            class="expand-icon absolute top-4 right-4 text-2xl text-rose-400"
+            >+</span
+          >
+
           <div
             class="long-desc absolute inset-0 bg-black/80 backdrop-blur-md text-gray-100 p-6 rounded-2xl flex flex-col justify-center opacity-0 pointer-events-none transition-opacity duration-300"
           >
@@ -632,7 +661,6 @@
             making drinks.
           </div>
         </div>
-
         <!-- 5 -->
         <div
           class="work-card bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300 relative"
@@ -640,7 +668,14 @@
           <h3 class="text-xl font-semibold text-white">Sommelier</h3>
           <p class="text-gray-300">Vinfolket</p>
 
-          <div class="long-desc">
+          <span
+            class="expand-icon absolute top-4 right-4 text-2xl text-rose-400"
+            >+</span
+          >
+
+          <div
+            class="long-desc absolute inset-0 bg-black/80 backdrop-blur-md text-gray-100 p-6 rounded-2xl flex flex-col justify-center opacity-0 pointer-events-none transition-opacity duration-300"
+          >
             Provided wine recommendations, guided tastings, and managed wine
             inventory, ensuring excellent customer experience and proper
             handling of fine wines.
@@ -652,6 +687,11 @@
         >
           <h3 class="text-xl font-semibold text-white">Retail Assistant</h3>
           <p class="text-gray-300">ICA KVANTUM</p>
+
+          <span
+            class="expand-icon absolute top-4 right-4 text-2xl text-rose-400"
+            >+</span
+          >
 
           <div
             class="long-desc absolute inset-0 bg-black/80 backdrop-blur-md text-gray-100 p-4 rounded-2xl opacity-0 pointer-events-none transition-opacity duration-300 overflow-auto"
@@ -899,27 +939,34 @@
       }
     });
 
-    /* ========================= */
     renderCarousel();
     startAutoRotate();
-
+    /* ========================= */
     const workCards = document.querySelectorAll(".work-card");
 
     let autoCloseTimer = null;
 
     workCards.forEach((card) => {
+      const icon = card.querySelector(".expand-icon");
+
       card.addEventListener("click", () => {
         const isActive = card.classList.contains("active");
 
-        workCards.forEach((c) => c.classList.remove("active"));
+        workCards.forEach((c) => {
+          c.classList.remove("active");
+          const cIcon = c.querySelector(".expand-icon");
+          if (cIcon) cIcon.textContent = "+";
+        });
 
         clearTimeout(autoCloseTimer);
 
         if (!isActive) {
           card.classList.add("active");
+          if (icon) icon.textContent = "−";
 
           autoCloseTimer = setTimeout(() => {
             card.classList.remove("active");
+            if (icon) icon.textContent = "+";
           }, 7000);
         }
       });

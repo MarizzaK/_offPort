@@ -424,10 +424,10 @@
         Education
       </h2>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
         <!-- CARD 1 -->
         <div
-          class="edu-card border border-gray-700 rounded-xl overflow-hidden relative"
+          class="edu-card self-start border border-gray-700 rounded-xl overflow-hidden relative"
         >
           <button
             class="edu-toggle w-full text-left px-6 py-4 bg-gray-800 hover:bg-gray-700 transition flex justify-between items-center"
@@ -997,7 +997,7 @@
           const otherCard = otherBtn.parentElement;
           const otherContent = otherBtn.nextElementSibling;
           if (otherContent !== content) {
-            otherContent.style.maxHeight = null;
+            otherContent.style.maxHeight = "0px";
             otherCard.classList.remove("active");
             otherBtn.querySelector("span").textContent = "+";
 

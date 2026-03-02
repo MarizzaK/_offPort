@@ -3,137 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ditt Namn | Webbutvecklare</title>
+    <title>Mitt Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
       rel="stylesheet"
     />
-
-    <style>
-      @keyframes glow {
-        0%,
-        100% {
-          box-shadow: 0 0 10px rgba(255, 105, 180, 0.6),
-            0 0 20px rgba(255, 105, 180, 0.4);
-        }
-        50% {
-          box-shadow: 0 0 20px rgba(255, 105, 180, 0.8),
-            0 0 30px rgba(255, 105, 180, 0.6);
-        }
-      }
-      .hover\:animate-glow:hover {
-        animation: glow 1s infinite alternate;
-      }
-
-      /* ===== PROJECT SECTION ===== */
-      .projects-section {
-        position: relative;
-        overflow: hidden;
-        min-height: 650px;
-        z-index: 1;
-      }
-
-      /* ===== CAROUSEL WRAPPER ===== */
-      .carousel-wrapper {
-        perspective: 1200px;
-        position: relative;
-        height: 420px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      /* ===== CAROUSEL ===== */
-      .carousel {
-        position: relative;
-        width: 0;
-        height: 0;
-        transform-style: preserve-3d;
-      }
-      /* ===== POLAROID CARD ===== */
-      .carousel-card {
-        position: absolute;
-        width: 240px;
-        background: white;
-        border-radius: 6px;
-        padding: 12px 12px 50px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-        text-align: center;
-        cursor: pointer;
-        top: 50%;
-        left: 50%;
-        transform-origin: center;
-
-        transition: transform 0.8s ease, opacity 0.8s ease;
-      }
-
-      /* image */
-      .carousel-card img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 4px;
-      }
-
-      /* title */
-      .carousel-card h3 {
-        margin-top: 10px;
-        font-weight: 600;
-        color: #222;
-      }
-
-      /* button */
-      .carousel-card a {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #ec4899;
-        color: white;
-        padding: 6px 14px;
-        border-radius: 6px;
-        font-size: 14px;
-        text-decoration: none;
-        transition: 0.3s;
-      }
-
-      .carousel-card a:hover {
-        background: #db2777;
-      }
-
-      /*----*/
-      .section-title {
-        text-align: center;
-        margin-bottom: 20px;
-        font-weight: 600;
-        color: #f9a8d4;
-      }
-
-      .skills-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-      }
-
-      .skill {
-        background: rgba(236, 72, 153, 0.15);
-        color: #f472b6;
-        padding: 8px 16px;
-        border-radius: 999px;
-        font-size: 14px;
-        transition: 0.3s;
-      }
-
-      .skill:hover {
-        transform: translateY(-3px);
-        background: rgba(236, 72, 153, 0.3);
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body class="bg-gray-900 text-white font-[Poppins] scroll-smooth">
-    <!-- HERO -->
     <header
       class="min-h-screen flex items-center justify-center px-6 relative overflow-hidden bg-gradient-to-br from-pink-500 via-rose-500 to-purple-600"
     >
@@ -147,7 +25,6 @@
       <div
         class="relative z-10 flex flex-col lg:flex-row items-center gap-12 text-center lg:text-left"
       >
-        <!-- PROFILE IMAGE -->
         <div class="relative">
           <img
             src="./images/header-img.jpeg"
@@ -170,6 +47,52 @@
               class="px-8 py-3 border border-white text-white rounded-full hover:bg-white hover:text-pink-600 transition duration-300"
             >
               Let's get in touch
+            </a>
+          </div>
+          <div class="mt-6 flex gap-6 justify-center lg:justify-start">
+            <a
+              href="https://github.com/MarizzaK"
+              target="_blank"
+              class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center hover:scale-110 transition duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55
+                0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.54-3.88-1.54-.52-1.32-1.27-1.67-1.27-1.67
+                -1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.24 3.32.95
+                .1-.74.4-1.24.72-1.52-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.3 1.17-3.11
+                -.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.19a10.94 10.94 0 012.87-.39c.97 0 1.95.13 2.87.39
+                2.19-1.5 3.15-1.19 3.15-1.19.62 1.59.23 2.77.11 3.06.73.81 1.17 1.85 1.17 3.11
+                0 4.42-2.69 5.39-5.25 5.67.41.36.77 1.08.77 2.18
+                0 1.58-.02 2.85-.02 3.23 0 .3.21.66.79.55A11.51 11.51 0 0023.5 12
+                C23.5 5.65 18.35.5 12 .5z"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/marizza-karlin-8b34a734a/"
+              target="_blank"
+              class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center hover:scale-110 transition duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5
+                1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07
+                c.67-1.27 2.3-2.6 4.73-2.6 5.06 0 6 3.33 6 7.66V24h-5v-7.66
+                c0-1.83-.03-4.2-2.55-4.2-2.55 0-2.93 1.98-2.93 4.02V24h-5V8z"
+                />
+              </svg>
             </a>
           </div>
         </div>
@@ -245,8 +168,20 @@
         </div>
       </div>
     </section>
+    <!-- DESKTOP SLIDER CONTROL -->
+    <div class="hidden md:flex justify-center mb-20">
+      <input
+        id="carouselRange"
+        type="range"
+        min="0"
+        max="4"
+        step="1"
+        value="0"
+        class="w-96 accent-pink-500 cursor-pointer"
+      />
+    </div>
     <!-- SKILLS -->
-    <section id="skills" class="py-24 px-6 bg-gray-800 text-white">
+    <section id="skills" class="py-24 px-6 bg-gray-800 -mt-24 text-white">
       <h2 class="text-4xl text-center font-bold mb-6 text-pink-400">
         Skills & Technologies
       </h2>
@@ -305,39 +240,153 @@
         Education
       </h2>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
         <!-- CARD 1 -->
-        <div
-          class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:scale-105 transition duration-300"
-        >
-          <h3 class="text-xl font-semibold text-white mb-2">Medieinstitutet</h3>
-          <p class="text-gray-300">E-commerce Web Development | 2023–2025</p>
+        <div class="edu-card border border-gray-700 rounded-xl overflow-hidden">
+          <button
+            class="edu-toggle w-full text-left px-6 py-4 bg-gray-800 hover:bg-gray-700 transition flex justify-between items-center"
+          >
+            <div>
+              <h3 class="text-xl font-semibold text-white">NTI-skolan</h3>
+              <p class="text-gray-300 text-sm">
+                Artificial Intelligence 1 | 2025
+              </p>
+            </div>
+            <span class="text-pink-400 font-bold text-2xl">+</span>
+          </button>
+          <div
+            class="edu-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-200"
+          >
+            <ul class="list-disc list-inside py-4 space-y-1 text-sm">
+              <li>AI fundamentals and problem-solving techniques</li>
+              <li>Machine learning methods and neural networks</li>
+              <li>
+                Practical AI applications: games, image generation, societal
+                uses
+              </li>
+              <li>Completed course with top grade</li>
+            </ul>
+          </div>
         </div>
 
         <!-- CARD 2 -->
         <div
-          class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:scale-105 transition duration-300"
+          class="edu-card border border-gray-700 rounded-2xl overflow-hidden mb-4"
         >
-          <h3 class="text-xl font-semibold text-white mb-2">NTI-skolan</h3>
-          <p class="text-gray-300">Web Development 1 | 2023</p>
+          <button
+            class="edu-toggle w-full text-left px-6 py-4 bg-gray-800 hover:bg-gray-700 transition flex justify-between items-center"
+          >
+            <div>
+              <h3 class="text-xl font-semibold text-white">Medieinstitutet</h3>
+              <p class="text-gray-300 text-sm">
+                E-commerce Web Development | 2023–2025
+              </p>
+            </div>
+            <span class="text-pink-400 font-bold text-2xl">+</span>
+          </button>
+          <div
+            class="edu-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-200"
+          >
+            <ul class="list-disc list-inside py-4 space-y-1 text-sm">
+              <li>Front-end development</li>
+              <li>Work and project methodologies</li>
+              <li>Systems development</li>
+              <li>System support and integration with third-party systems</li>
+              <li>Database technologies</li>
+              <li>Development for e-commerce platforms</li>
+              <li>Systems development and frameworks</li>
+              <li>Competency portfolio and entrepreneurship</li>
+              <li>25-week internship</li>
+            </ul>
+          </div>
         </div>
 
         <!-- CARD 3 -->
         <div
-          class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:scale-105 transition duration-300"
+          class="edu-card border border-gray-700 rounded-2xl overflow-hidden mb-4"
         >
-          <h3 class="text-xl font-semibold text-white mb-2">Jensen Komvux</h3>
-          <p class="text-gray-300">Programming 1, Python | 2023</p>
+          <button
+            class="edu-toggle w-full text-left px-6 py-4 bg-gray-800 hover:bg-gray-700 transition flex justify-between items-center"
+          >
+            <div>
+              <h3 class="text-xl font-semibold text-white">NTI-skolan</h3>
+              <p class="text-gray-300 text-sm">Web Development 1 | 2023</p>
+            </div>
+            <span class="text-pink-400 font-bold text-2xl">+</span>
+          </button>
+          <div
+            class="edu-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-200"
+          >
+            <ul class="list-disc list-inside py-4 space-y-1 text-sm">
+              <li>Responsive design</li>
+              <li>UI/UX principles and designing user-friendly interfaces</li>
+              <li>
+                Web development best practices for accessibility and usability
+              </li>
+              <li>
+                Hands-on projects to practice layout, design, and interface
+                adaptation
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- CARD 4 -->
         <div
-          class="bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:scale-105 transition duration-300"
+          class="edu-card border border-gray-700 rounded-2xl overflow-hidden mb-4"
         >
-          <h3 class="text-xl font-semibold text-white mb-2">
-            Thorén Business School
-          </h3>
-          <p class="text-gray-300">High School: Economics & Law | 2019-2022</p>
+          <button
+            class="edu-toggle w-full text-left px-6 py-4 bg-gray-800 hover:bg-gray-700 transition flex justify-between items-center"
+          >
+            <div>
+              <h3 class="text-xl font-semibold text-white">Jensen Komvux</h3>
+              <p class="text-gray-300 text-sm">Programming 1 | 2023</p>
+            </div>
+            <span class="text-pink-400 font-bold text-2xl">+</span>
+          </button>
+          <div
+            class="edu-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-200"
+          >
+            <ul class="list-disc list-inside py-4 space-y-1 text-sm">
+              <li>Studied programming in <strong>Python</strong></li>
+              <li>Fundamentals of algorithms and problem-solving</li>
+              <li>Worked on small projects to practice coding concepts</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div
+          class="edu-card border border-gray-700 rounded-2xl overflow-hidden mb-4"
+        >
+          <button
+            class="edu-toggle w-full text-left px-6 py-4 bg-gray-800 hover:bg-gray-700 transition flex justify-between items-center"
+          >
+            <div>
+              <h3 class="text-xl font-semibold text-white">
+                Thorén Business School
+              </h3>
+              <p class="text-gray-300 text-sm">
+                High School: Economics & Law | 2019-2022
+              </p>
+            </div>
+            <span class="text-pink-400 font-bold text-2xl">+</span>
+          </button>
+          <div
+            class="edu-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-200"
+          >
+            <ul class="list-disc list-inside py-4 space-y-1 text-sm">
+              <li>Upper secondary studies with focus on Economics and Law</li>
+              <li>Entrepreneurship and Business Management</li>
+              <li>Business Economics 1 & 2</li>
+              <li>Humanities and Social Sciences</li>
+              <li>Private Law</li>
+              <li>Psychology 1 & 2a</li>
+              <li>Law and Society</li>
+              <li>Achieved top grades in all of these subjects</li>
+              <li>Also completed English 7, Business Law and Mathematics 2b</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -346,56 +395,100 @@
       <h2 class="text-4xl text-center font-bold mb-16 text-rose-400">
         Work Experience
       </h2>
-
+      <!-- 1 -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- 1 -->
         <div
-          class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300"
+          class="work-card bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg cursor-pointer relative hover:scale-105 transition-transform duration-300"
         >
           <h3 class="text-xl font-semibold text-white">Tutoring</h3>
           <p class="text-gray-300">Yepstr</p>
+          <div
+            class="long-desc absolute inset-0 bg-black/80 backdrop-blur-md text-gray-100 p-6 rounded-2xl flex flex-col justify-center opacity-0 pointer-events-none transition-opacity duration-300"
+          >
+            <p>
+              Provided homework support for students in various subjects,
+              helping them understand concepts, improve study skills, and
+              tailoring guidance to their individual needs.
+            </p>
+          </div>
         </div>
-
-        <!-- 3 -->
+        <!-- 2 -->
         <div
-          class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300"
+          class="work-card bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300 relative"
         >
           <h3 class="text-xl font-semibold text-white">Croupier</h3>
           <p class="text-gray-300">Cherry Casino</p>
+
+          <div
+            class="long-desc absolute inset-0 bg-black/80 backdrop-blur-md text-gray-100 p-6 rounded-2xl flex flex-col justify-center opacity-0 pointer-events-none transition-opacity duration-300"
+          >
+            Worked as a blackjack croupier, gaining experience in communication,
+            attention to detail, and performing effectively in high-pressure
+            environments.
+          </div>
         </div>
 
         <!-- 3 -->
         <div
-          class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300"
+          class="work-card bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300 relative"
         >
           <h3 class="text-xl font-semibold text-white">Youth Football Coach</h3>
           <p class="text-gray-300">Samba Football Academy</p>
+
+          <div
+            class="long-desc absolute inset-0 bg-black/80 backdrop-blur-md text-gray-100 p-6 rounded-2xl flex flex-col justify-center opacity-0 pointer-events-none transition-opacity duration-300"
+          >
+            Coached youth football players, focusing on skill development,
+            teamwork, and sportsmanship while fostering a positive and
+            motivating environment.
+          </div>
         </div>
 
         <!-- 4 -->
         <div
-          class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300"
+          class="work-card bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300 relative"
         >
           <h3 class="text-xl font-semibold text-white">
             Head Waitress, Bartender, Waitress
           </h3>
           <p class="text-gray-300">Gröna Lund Tivoli</p>
+
+          <div
+            class="long-desc absolute inset-0 bg-black/80 backdrop-blur-md text-gray-100 p-6 rounded-2xl flex flex-col justify-center opacity-0 pointer-events-none transition-opacity duration-300"
+          >
+            Worked in various roles, handling bookings and events, managing the
+            team, coordinating between kitchen and staff, serving guests, and
+            making drinks.
+          </div>
         </div>
 
         <!-- 5 -->
         <div
-          class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300"
+          class="work-card bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300 relative"
         >
           <h3 class="text-xl font-semibold text-white">Sommelier</h3>
           <p class="text-gray-300">Vinfolket</p>
-        </div>
 
+          <div class="long-desc">
+            Provided wine recommendations, guided tastings, and managed wine
+            inventory, ensuring excellent customer experience and proper
+            handling of fine wines.
+          </div>
+        </div>
         <!-- 6 -->
         <div
-          class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300"
+          class="work-card bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-6 rounded-2xl shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300 relative"
         >
           <h3 class="text-xl font-semibold text-white">Retail Assistant</h3>
           <p class="text-gray-300">ICA KVANTUM</p>
+
+          <div
+            class="long-desc absolute inset-0 bg-black/80 backdrop-blur-md text-gray-100 p-4 rounded-2xl opacity-0 pointer-events-none transition-opacity duration-300 overflow-auto"
+          >
+            Helped customers, worked the cash register, managed stock and
+            deliveries, handled front-of-store tasks, and set up displays to
+            boost sales.
+          </div>
         </div>
       </div>
     </section>
@@ -451,7 +544,7 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M16 12H8m0 0l4-4m0 8l-4-4"
+              d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
             />
           </svg>
         </a>
@@ -492,47 +585,5 @@
       </div>
     </footer>
   </body>
-  <script>
-    const carousel = document.getElementById("carousel");
-    const cards = Array.from(carousel.children);
-
-    let currentIndex = 0;
-    const totalCards = cards.length;
-
-    function renderCarousel() {
-      const radius = 400;
-      const angleStep = 360 / totalCards;
-
-      cards.forEach((card, i) => {
-        const indexDiff = i - currentIndex;
-        const angle = indexDiff * angleStep;
-
-        const isActive = i === currentIndex;
-
-        const scale = isActive ? 1 : 0.75;
-        const opacity = isActive ? 1 : 0.4;
-        const tilt = isActive ? 0 : indexDiff * 4;
-
-        card.style.transform = `
-  translate(-50%, -50%)
-  rotateY(${angle}deg)
-  translateZ(${radius}px)
-  rotateZ(${tilt}deg)
-  scale(${scale})
-`;
-
-        card.style.opacity = opacity;
-        card.style.zIndex = isActive ? 10 : 1;
-      });
-    }
-
-    function nextCard() {
-      currentIndex = (currentIndex + 1) % totalCards;
-      renderCarousel();
-    }
-
-    setInterval(nextCard, 6000);
-
-    renderCarousel();
-  </script>
+  <script src="/main.js"></script>
 </html>

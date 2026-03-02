@@ -165,65 +165,16 @@
         }
       }
 
-      @media (max-width: 767px) {
-        .edu-card .edu-desc {
-          position: relative;
-          top: 0;
-          inset: auto;
-          max-height: 0;
-          opacity: 0;
-          pointer-events: none;
-          overflow: hidden;
-          transition: max-height 0.5s ease, opacity 0.3s ease;
-          margin-top: 0.5rem;
-          border-radius: 0 0 1rem 1rem;
-          background: rgba(0, 0, 0, 0.85);
-        }
-
-        .edu-card.active .edu-desc {
-          max-height: 400px;
-          opacity: 1;
-          pointer-events: auto;
-        }
+      .edu-card {
+        position: relative;
       }
 
-      @media (min-width: 768px) {
-        .edu-card .edu-desc {
-          position: absolute;
-          inset: 0;
-          max-height: none;
-          opacity: 0;
-          pointer-events: none;
-          overflow: hidden;
-          transition: opacity 0.3s ease;
-        }
-
-        .edu-card.active .edu-desc {
-          opacity: 1;
-          pointer-events: auto;
-        }
-      }
-      /* ========== */
-      @media (max-width: 767px) {
-        .work-card {
-          overflow: hidden;
-        }
-
-        .work-card .long-desc {
-          position: relative;
-          inset: auto;
-          max-height: 0;
-          opacity: 0;
-          overflow: hidden;
-          margin-top: 0.5rem;
-          transition: max-height 0.4s ease, opacity 0.3s ease;
-          background: rgba(0, 0, 0, 0.8);
-        }
-
-        .work-card.active .long-desc {
-          max-height: 300px;
-          opacity: 1;
-        }
+      .edu-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        background-color: rgba(31, 41, 55, 0.95);
+        border-radius: 0 0 1rem 1rem;
       }
     </style>
   </head>
@@ -450,15 +401,18 @@
         </div>
       </div>
     </section>
+
     <!-- EDUCATION -->
     <section class="py-24 px-10 bg-gradient-to-b from-gray-900 to-gray-800">
       <h2 class="text-4xl text-center font-bold mb-16 text-pink-400">
         Education
       </h2>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- CARD 1 -->
-        <div class="edu-card border border-gray-700 rounded-xl overflow-hidden">
+        <div
+          class="edu-card border border-gray-700 rounded-xl overflow-hidden relative"
+        >
           <button
             class="edu-toggle w-full text-left px-6 py-4 bg-gray-800 hover:bg-gray-700 transition flex justify-between items-center"
           >
@@ -471,7 +425,7 @@
             <span class="text-pink-400 font-bold text-2xl">+</span>
           </button>
           <div
-            class="edu-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-200"
+            class="edu-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-200 bg-gray-800 rounded-b-xl"
           >
             <ul class="list-disc list-inside py-4 space-y-1 text-sm">
               <li>AI fundamentals and problem-solving techniques</li>
@@ -487,7 +441,7 @@
 
         <!-- CARD 2 -->
         <div
-          class="edu-card border border-gray-700 rounded-2xl overflow-hidden mb-4"
+          class="edu-card border border-gray-700 rounded-2xl overflow-hidden relative"
         >
           <button
             class="edu-toggle w-full text-left px-6 py-4 bg-gray-800 hover:bg-gray-700 transition flex justify-between items-center"
@@ -501,7 +455,7 @@
             <span class="text-pink-400 font-bold text-2xl">+</span>
           </button>
           <div
-            class="edu-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-200"
+            class="edu-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-200 bg-gray-800 rounded-b-xl"
           >
             <ul class="list-disc list-inside py-4 space-y-1 text-sm">
               <li>Front-end development</li>
@@ -519,7 +473,7 @@
 
         <!-- CARD 3 -->
         <div
-          class="edu-card border border-gray-700 rounded-2xl overflow-hidden mb-4"
+          class="edu-card border border-gray-700 rounded-2xl overflow-hidden relative"
         >
           <button
             class="edu-toggle w-full text-left px-6 py-4 bg-gray-800 hover:bg-gray-700 transition flex justify-between items-center"
@@ -531,7 +485,7 @@
             <span class="text-pink-400 font-bold text-2xl">+</span>
           </button>
           <div
-            class="edu-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-200"
+            class="edu-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-200 bg-gray-800 rounded-b-xl"
           >
             <ul class="list-disc list-inside py-4 space-y-1 text-sm">
               <li>Responsive design</li>
@@ -549,7 +503,7 @@
 
         <!-- CARD 4 -->
         <div
-          class="edu-card border border-gray-700 rounded-2xl overflow-hidden mb-4"
+          class="edu-card border border-gray-700 rounded-2xl overflow-hidden relative"
         >
           <button
             class="edu-toggle w-full text-left px-6 py-4 bg-gray-800 hover:bg-gray-700 transition flex justify-between items-center"
@@ -561,7 +515,7 @@
             <span class="text-pink-400 font-bold text-2xl">+</span>
           </button>
           <div
-            class="edu-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-200"
+            class="edu-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-200 bg-gray-800 rounded-b-xl"
           >
             <ul class="list-disc list-inside py-4 space-y-1 text-sm">
               <li>Studied programming in <strong>Python</strong></li>
@@ -573,7 +527,7 @@
 
         <!-- CARD 5 -->
         <div
-          class="edu-card border border-gray-700 rounded-2xl overflow-hidden mb-4"
+          class="edu-card border border-gray-700 rounded-2xl overflow-hidden relative"
         >
           <button
             class="edu-toggle w-full text-left px-6 py-4 bg-gray-800 hover:bg-gray-700 transition flex justify-between items-center"
@@ -589,7 +543,7 @@
             <span class="text-pink-400 font-bold text-2xl">+</span>
           </button>
           <div
-            class="edu-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-200"
+            class="edu-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-200 bg-gray-800 rounded-b-xl"
           >
             <ul class="list-disc list-inside py-4 space-y-1 text-sm">
               <li>Upper secondary studies with focus on Economics and Law</li>
@@ -606,6 +560,7 @@
         </div>
       </div>
     </section>
+
     <!-- WORK EXPERIENCE -->
     <section class="py-24 px-10 bg-gray-900">
       <h2 class="text-4xl text-center font-bold mb-16 text-rose-400">
@@ -970,31 +925,55 @@
       });
     });
 
+    /* ========================= */
     const eduToggles = document.querySelectorAll(".edu-toggle");
+
+    const autoCloseTimers = new WeakMap();
 
     eduToggles.forEach((btn) => {
       btn.addEventListener("click", () => {
+        const card = btn.parentElement;
         const content = btn.nextElementSibling;
         const expanded =
           content.style.maxHeight && content.style.maxHeight !== "0px";
 
-        const isMobile = window.innerWidth <= 767;
+        eduToggles.forEach((otherBtn) => {
+          const otherCard = otherBtn.parentElement;
+          const otherContent = otherBtn.nextElementSibling;
+          if (otherContent !== content) {
+            otherContent.style.maxHeight = null;
+            otherCard.classList.remove("active");
+            otherBtn.querySelector("span").textContent = "+";
 
-        if (!isMobile) {
-          document.querySelectorAll(".edu-content").forEach((c) => {
-            if (c !== content) {
-              c.style.maxHeight = null;
-              c.previousElementSibling.querySelector("span").textContent = "+";
+            if (autoCloseTimers.has(otherCard)) {
+              clearTimeout(autoCloseTimers.get(otherCard));
+              autoCloseTimers.delete(otherCard);
             }
-          });
-        }
+          }
+        });
 
         if (!expanded) {
           content.style.maxHeight = content.scrollHeight + "px";
+          card.classList.add("active");
           btn.querySelector("span").textContent = "−";
+
+          const timer = setTimeout(() => {
+            content.style.maxHeight = null;
+            card.classList.remove("active");
+            btn.querySelector("span").textContent = "+";
+            autoCloseTimers.delete(card);
+          }, 7000);
+
+          autoCloseTimers.set(card, timer);
         } else {
           content.style.maxHeight = null;
+          card.classList.remove("active");
           btn.querySelector("span").textContent = "+";
+
+          if (autoCloseTimers.has(card)) {
+            clearTimeout(autoCloseTimers.get(card));
+            autoCloseTimers.delete(card);
+          }
         }
       });
     });
